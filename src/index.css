@@ -38,7 +38,7 @@ a.active {
   padding: 10px;
   background-color: black;
   color: white;
-  border: none;
+  border: 1px transparent;
   border-radius: 20px;
   cursor: pointer;
 }
@@ -53,4 +53,57 @@ a.active {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.buttons {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.buttons button {
+  width: 60px;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  height: 20px;
+  border: 1px transparent;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.buttons button:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+.form-container {
+  width: 100%;
+}
+.form-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-container input {
+  width: 100%;
+  outline: none;
+  padding: 7px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+.form-container textarea {
+  width: 100%;
+  padding: 7px;
+  outline: none;
+}
+.form-container button {
+  width: 100px;
+  border-radius: 10px;
+  height: 30px;
+  border: 1px transparent;
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }

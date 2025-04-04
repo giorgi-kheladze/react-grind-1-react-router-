@@ -1,23 +1,35 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
-import Contact from "./pages/Contact";
 import About from "./pages/About";
+import RootLayout from "./layout/RootLayout";
+import ContactLayout from "./layout/ContactLayout";
+import ContactInfo from "./components/ContactInfo";
+import ContactForm from "./components/ContactForm";
 
 const App = () => {
+  const routes = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Home />}></Route>
+        <Route path="product" element={<Product />}></Route>
+        <Route path="contact" element={<ContactLayout />}>
+          <Route path="info" element={<ContactInfo />}></Route>
+          <Route path="form" element={<ContactForm />}></Route>
+        </Route>
+        <Route path="about" element={<About />}></Route>
+      </Route>
+    )
+  );
   return (
     <div>
-      <Navbar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/product" element={<Product />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/about" element={<About />}></Route>
-        </Routes>
-      </div>
+      <RouterProvider router={routes} />
     </div>
   );
 };
