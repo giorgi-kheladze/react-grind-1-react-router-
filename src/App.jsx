@@ -12,6 +12,7 @@ import RootLayout from "./layout/RootLayout";
 import ContactLayout from "./layout/ContactLayout";
 import ContactInfo from "./components/ContactInfo";
 import ContactForm from "./components/ContactForm";
+import ErrorPage from "./components/ErrorPage";
 
 const App = () => {
   const routes = createBrowserRouter(
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="form" element={<ContactForm />}></Route>
         </Route>
         <Route path="about" element={<About />}></Route>
+        <Route path="*" element={<ErrorPage />}></Route>
       </Route>
     )
   );
